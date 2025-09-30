@@ -211,31 +211,43 @@ button:hover {
 .guide.reverse {
   flex-direction: row-reverse;
 }
-
 .guide-text {
   flex: 1 1 60%;
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* slightly larger */
   flex-direction: column;
   justify-content: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  font-weight: bold; /* bold text */
 }
 
 .guide-text h3 {
-  font-size: 2rem;
+  font-size: 2.5rem; /* larger */
   margin-bottom: 0.5rem;
-  color: white;
+  color: #00f9ff; /* neon sky blue */
   text-shadow:
-    -1px -1px 0 #004aad,
-     1px -1px 0 #004aad,
-    -1px  1px 0 #004aad,
-     1px  1px 0 #004aad; /* Blue stroke around book title */
+    0 0 5px #00f9ff,
+    0 0 10px #00f9ff,
+    0 0 20px #00f9ff,
+    0 0 40px #00f9ff; /* neon glow */
+  font-weight: bold;
 }
 
 .guide-text p {
   margin: 1rem 0;
-  line-height: 1.5;
-  font-size: 1.2rem;
+  line-height: 1.6;
+  font-size: 1.4rem; /* slightly larger */
+  font-weight: bold; /* bold text */
+}
+
+/* Neon sky blue effect for specific text inside <p> */
+.guide-text p span.neon {
+  color: #00f9ff;
+  text-shadow:
+    0 0 5px #00f9ff,
+    0 0 10px #00f9ff,
+    0 0 20px #00f9ff,
+    0 0 40px #00f9ff;
 }
 
 .cta-button {
