@@ -29,15 +29,44 @@
   <!-- Two-Column Hero Section -->
   <section class="hero-section">
     <!-- Left: Lead Generation Form -->
-    <div class="form-container">
-      <h2>Get in Touch!</h2>
-      <p class="caption">Email us with any enquiries!</p>
-      <form action="mailto:pallavighosh@phindia.com" method="POST" enctype="text/plain">
-        <input type="text" name="Name and Designation" placeholder="Your Name and Designation" required>
-        <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Email</button>
-      </form>
-    </div>
+   <div class="form-container">
+  <h2>Get in Touch!</h2>
+  <p class="caption">Email us with any enquiries!</p>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name and Designation" required>
+    <input type="text" id="area" placeholder="Subject Area" required>
+    <textarea id="query" placeholder="Any other query" rows="5"></textarea>
+    <button type="submit">Send Email</button>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = encodeURIComponent(document.getElementById("name").value);
+    const area = encodeURIComponent(document.getElementById("area").value);
+    const query = encodeURIComponent(document.getElementById("query").value);
+
+    const subject = encodeURIComponent("About PHI Learning Law Books");
+    const body = encodeURIComponent(
+      `Dear Pallavi Ghosh,
+
+I am writing to ensure about PHI Learning law books.
+
+Please send your entire list of law books in the following subject area: ${area}
+
+${query ? "Additional query: " + query : ""}
+
+Best regards,
+${name}`
+    );
+
+    window.location.href = `mailto:pallavighosh@phindia.com?subject=${subject}&body=${body}`;
+  });
+</script>
+
 
     
  <div class="cta-box">
